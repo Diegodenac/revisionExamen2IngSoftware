@@ -10,9 +10,11 @@ import buscarProyecto from "./buscarProyecto.js";
 
 // buscar y enceontrar mas de una coindencia de proyectos DONE
 
-// buscar y enceontrar proyectos cuyo nombre empieza con el criterio de busqueda
+// buscar y enceontrar proyectos cuyo nombre empieza con el criterio de busqueda DONE
 
 // por ejm: "ejerc" y en mi lista tengo "ejercio1", "ejercicio2" -> devuelve ambos
+
+// si no encuetra proyectos cuyo nombre no tiene el criterio de busqueda devuelve "" DONE
 
 
 
@@ -68,7 +70,7 @@ describe("Buscar", () => {
           
   });
 
-  it("encuentra todos los proyectos que coinciden con el criterio de busqueda en la lista de proyeyectos", () => {
+  it("encuentra todos los proyectos que coinciden con el criterio de busqueda en la lista de proyectos", () => {
           
     let proyectos = [];
           
@@ -81,6 +83,22 @@ describe("Buscar", () => {
     proyectos.push("proyecto2");
           
     expect (buscarProyecto("ejer", proyectos)).toEqual(["ejercicio2", "ejercicio3"]);
+          
+  });
+
+  it("si no encuentra proyectos que coinciden con el criterio de busqueda en la lista de proyectos devuelve un string en vacio", () => {
+          
+    let proyectos = [];
+          
+    proyectos.push("proyecto1");
+          
+    proyectos.push("ejercicio2");
+          
+    proyectos.push("ejercicio3");
+
+    proyectos.push("proyecto2");
+          
+    expect (buscarProyecto("test", proyectos)).toEqual("");
           
   });
         
