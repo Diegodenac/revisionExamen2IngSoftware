@@ -26,15 +26,15 @@ describe("Buscar", () => {
           
   });
           
-  // it("encuentra un proyecto cuando el mismo existe en una lista de 1 proyecto", () => {
+  it("encuentra un proyecto cuando el mismo existe en una lista de 1 proyecto", () => {
           
-  //   let proyectos = [];
+    let proyectos = [];
           
-  //   proyectos.push("miUnicoProyecto");
+    proyectos.push("miUnicoProyecto");
           
-  //   expect (buscarProyecto("miUnicoProyecto", proyectos)).toEqual("miUnicoProyecto");
+    expect (buscarProyecto("miUnicoProyecto", proyectos)).toEqual("miUnicoProyecto");
           
-  // });
+  });
           
           
           
