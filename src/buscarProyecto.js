@@ -1,8 +1,8 @@
-function buscarProyecto(nameOfProyect, proyectsList) {
+function buscarProyecto(searchCriterion, proyectsList) {
   let foundProyects = [];
   if(proyectsList[0]){
     for(const proyect of proyectsList){
-      if(proyect === nameOfProyect){
+      if(proyect.includes(searchCriterion)){
         foundProyects.push(proyect)
       }
     }

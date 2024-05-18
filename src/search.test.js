@@ -8,7 +8,7 @@ import buscarProyecto from "./buscarProyecto.js";
 
 // buscar y encontrar un proyecto en una lista de varios proyectos DONE
 
-// buscar y enceontrar mas de una coindencia de proyectos
+// buscar y enceontrar mas de una coindencia de proyectos DONE
 
 // buscar y enceontrar proyectos cuyo nombre empieza con el criterio de busqueda
 
@@ -56,15 +56,31 @@ describe("Buscar", () => {
           
     let proyectos = [];
           
-    proyectos.push("proyecto1");
+    proyectos.push("ejercicio1");
           
     proyectos.push("proyecto");
           
     proyectos.push("proyecto");
 
-    proyectos.push("proyecto2");
+    proyectos.push("ejercicio2");
           
     expect (buscarProyecto("proyecto", proyectos)).toEqual(["proyecto", "proyecto"]);
+          
+  });
+
+  it("encuentra todos los proyectos que coinciden con el criterio de busqueda en la lista de proyeyectos", () => {
+          
+    let proyectos = [];
+          
+    proyectos.push("proyecto1");
+          
+    proyectos.push("ejercicio2");
+          
+    proyectos.push("ejercicio3");
+
+    proyectos.push("proyecto2");
+          
+    expect (buscarProyecto("ejer", proyectos)).toEqual(["ejercicio2", "ejercicio3"]);
           
   });
         
