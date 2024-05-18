@@ -1,6 +1,12 @@
 function buscarProyecto(nameOfProyect, proyectsList) {
-  if(proyectsList[0] === nameOfProyect){
-    return proyectsList[0];
+  let foundProyects = [];
+  if(proyectsList[0]){
+    for(const proyect of proyectsList){
+      if(proyect === nameOfProyect){
+        foundProyects.push(proyect)
+      }
+    }
+    return foundProyects;
   }
   return "";
 }

@@ -2,11 +2,11 @@ import buscarProyecto from "./buscarProyecto.js";
 
 //Casos
 
-// buscar un proyecto enn una lista vacia 
+// buscar un proyecto enn una lista vacia DONE
 
-// buscar y encontrar un proyecto en una lista de 1 proyecto
+// buscar y encontrar un proyecto en una lista de 1 proyecto DONE
 
-// buscar y encontrar un proyecto en una lista de varios proyectos
+// buscar y encontrar un proyecto en una lista de varios proyectos DONE
 
 // buscar y enceontrar mas de una coindencia de proyectos
 
@@ -32,25 +32,41 @@ describe("Buscar", () => {
           
     proyectos.push("miUnicoProyecto");
           
-    expect (buscarProyecto("miUnicoProyecto", proyectos)).toEqual("miUnicoProyecto");
+    expect (buscarProyecto("miUnicoProyecto", proyectos)).toEqual(["miUnicoProyecto"]);
           
   });
           
           
           
-  // it("encuentra un proyecto cuando el mismo existe en una lista de varios proyectos", () => {
+  it("encuentra un proyecto cuando el mismo existe en una lista de varios proyectos", () => {
           
-  //   let proyectos = [];
+    let proyectos = [];
           
-  //   proyectos.push("proyecto1");
+    proyectos.push("proyecto1");
           
-  //   proyectos.push("proyecto2");
+    proyectos.push("proyecto2");
           
-  //   proyectos.push("proyecto3");
+    proyectos.push("proyecto3");
           
-  //   expect (buscarProyecto("proyecto2", proyectos)).toEqual("proyecto2");
+    expect (buscarProyecto("proyecto2", proyectos)).toEqual(["proyecto2"]);
           
-  // });
+  });
+
+  it("encuentra todos los proyecto con el mismo nombre en una lista de varios proyectos", () => {
+          
+    let proyectos = [];
+          
+    proyectos.push("proyecto1");
+          
+    proyectos.push("proyecto");
+          
+    proyectos.push("proyecto");
+
+    proyectos.push("proyecto2");
+          
+    expect (buscarProyecto("proyecto", proyectos)).toEqual(["proyecto", "proyecto"]);
+          
+  });
         
 });
         
